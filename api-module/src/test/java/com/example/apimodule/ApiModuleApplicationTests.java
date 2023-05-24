@@ -1,10 +1,10 @@
-package com.example.performanceimprovement;
+package com.example.apimodule;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PerformanceImprovementApplicationTests {
+class ApiModuleApplicationTests {
 
     @Test
     void contextLoads() {
