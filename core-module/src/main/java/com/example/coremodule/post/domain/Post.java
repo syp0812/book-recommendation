@@ -7,10 +7,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Getter
 @Entity
 @DynamicUpdate          // 변경된 컬럼만 update
+@Where(clause = "status = 'ALIVE'")
+@SQLDelete(sql = "UPDATE post SET status = 'DELETE' WHERE id = ?")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Post {
 
