@@ -1,5 +1,6 @@
 package com.example.coremodule.post.domain;
 
+import com.example.coremodule.common.Status;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -32,11 +33,16 @@ public class Post {
     @Column(nullable = false)
     private String image;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status.Post status;
+
     @Builder
-    public Post(String title, String content, String tag, String image) {
+    public Post(String title, String content, String tag, String image, Status.Post status) {
         this.title = title;
         this.content = content;
         this.tag = tag;
         this.image = image;
+        this.status = status;
     }
 }
