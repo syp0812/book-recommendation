@@ -1,5 +1,6 @@
 package com.example.coremodule.book;
 
+import com.example.coremodule.book_library_info.BookLibraryInfo;
 import com.example.coremodule.common.Status;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -9,6 +10,9 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -49,6 +53,9 @@ public class Book {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status.Book status;
+
+    @OneToMany(mappedBy = "book", orphanRemoval = true)
+    private List<BookLibraryInfo> libraryInfo = new ArrayList<>();
 
     @Builder
     public Book(String title, String publisher, String price, String page, String library_name,
