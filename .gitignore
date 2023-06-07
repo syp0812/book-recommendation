@@ -37,3 +37,4 @@ out/
 .vscode/
 
 core-module/src/main/resources/application-*.properties
+api-module/src/main/resources/application-dev.properties

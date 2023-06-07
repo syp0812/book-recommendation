@@ -6,4 +6,9 @@ public class Status {
         ALIVE,
         DELETED
     }
+
+    public enum Book {
+        ALIVE,
+        DELETED
+    }
 }
