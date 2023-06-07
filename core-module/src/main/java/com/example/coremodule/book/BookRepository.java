@@ -1,4 +1,4 @@
-package com.example.coremodule.book.domain;
+package com.example.coremodule.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

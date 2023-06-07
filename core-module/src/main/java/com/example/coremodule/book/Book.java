@@ -1,4 +1,4 @@
-package com.example.coremodule.post.domain;
+package com.example.coremodule.book;
 
 import com.example.coremodule.common.Status;
 import jakarta.persistence.*;
@@ -12,11 +12,11 @@ import org.hibernate.annotations.Where;
 
 @Getter
 @Entity
-@DynamicUpdate          // 변경된 컬럼만 update
+@DynamicUpdate
 @Where(clause = "status = 'ALIVE'")
 @SQLDelete(sql = "UPDATE post SET status = 'DELETE' WHERE id = ?")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Post {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,27 +26,41 @@ public class Post {
     private String title;
 
     @Column(nullable = false)
-    private String content;
+    private String publisher;
 
     @Column(nullable = false)
-    private String nickname;
+    private String price;
 
     @Column(nullable = false)
-    private String tag;
+    private String page;
+
+    @Column(nullable = false)
+    private String library_name;
+
+    @Column(nullable = false)
+    private String isbn;
 
     @Column(nullable = false)
     private String image;
 
+    @Column(nullable = false)
+    private String author;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Status.Post status;
+    private Status.Book status;
 
     @Builder
-    public Post(String title, String content, String tag, String image, Status.Post status) {
+    public Book(String title, String publisher, String price, String page, String library_name,
+                String isbn, String image, String author, Status.Book status) {
         this.title = title;
-        this.content = content;
-        this.tag = tag;
+        this.publisher = publisher;
+        this.price = price;
+        this.page = page;
+        this.library_name = library_name;
+        this.isbn = isbn;
         this.image = image;
+        this.author = author;
         this.status = status;
     }
 }
