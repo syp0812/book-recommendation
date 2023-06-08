@@ -1,4 +1,4 @@
-package com.example.coremodule.post.domain;
+package com.example.coremodule.post;
 
 import com.example.coremodule.common.Status;
 import jakarta.persistence.*;
