@@ -26,7 +26,6 @@ subprojects {
 
         dependencies {
             implementation 'org.springframework.boot:spring-boot-starter'
-            implementation 'org.springframework.boot:spring-boot-starter-web:3.0.4'
 
             compileOnly 'org.projectlombok:lombok'
             annotationProcessor 'org.projectlombok:lombok'
