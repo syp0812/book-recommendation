@@ -38,6 +38,9 @@ public class User {
 
     private String area;
 
+    @Enumerated(EnumType.STRING)
+    private EncryptionAlgorithm algorithm;
+
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Authority> authorities;
 

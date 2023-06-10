@@ -2,26 +2,28 @@ package com.example.coremodule.security;
 
 import com.example.coremodule.user.domain.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserDetailsImpl implements UserDetails {
 
     private final User user;
-    private final String username;
 
-    public UserDetailsImpl(User user, String username) {
+    public UserDetailsImpl(User user) {
         this.user = user;
-        this.username = username;
     }
-
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(() -> user.getAuthority());
+        return user.getAuthorities().stream()
+                .map(a -> new SimpleGrantedAuthority(
+                        a.getName()
+                ))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -31,7 +33,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.username;
+        return user.getUsername();
     }
 
     @Override
