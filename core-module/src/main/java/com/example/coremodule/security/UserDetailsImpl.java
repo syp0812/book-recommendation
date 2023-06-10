@@ -1,4 +1,4 @@
-package com.example.apimodule.security;
+package com.example.coremodule.security;
 
 import com.example.coremodule.user.domain.User;
 import org.springframework.security.core.GrantedAuthority;
