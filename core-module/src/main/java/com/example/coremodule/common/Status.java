@@ -11,4 +11,9 @@ public class Status {
         ALIVE,
         DELETED
     }
+
+    public enum User {
+        ALIVE,
+        DELETED
+    }
 }
