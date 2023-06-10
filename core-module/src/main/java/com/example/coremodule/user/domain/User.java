@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.List;
+
 @Getter
 @Entity
 @DynamicUpdate
@@ -31,21 +33,22 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String authority;
-
     @Enumerated(EnumType.STRING)
     private Status.User status;
 
     private String area;
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Authority> authorities;
+
     @Builder
-    public User(String username, String email, String password, String authority, Status.User status, String area) {
+    public User(String username, String email, String password, String authority, Status.User status,
+                String area, List<Authority> authorities) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.authority = authority;
         this.status = status;
         this.area = area;
+        this.authorities = authorities;
     }
 }
