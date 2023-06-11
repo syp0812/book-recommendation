@@ -1,5 +1,6 @@
-package com.example.coremodule.security;
+package com.example.coremodule.security.authorization;
 
+import com.example.coremodule.security.authorization.UserDetailsImpl;
 import com.example.coremodule.user.domain.User;
 import com.example.coremodule.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
