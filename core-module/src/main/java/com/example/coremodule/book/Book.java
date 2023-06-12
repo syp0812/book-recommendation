@@ -2,7 +2,7 @@ package com.example.coremodule.book;
 
 import com.example.coremodule.book_library_info.BookLibraryInfo;
 import com.example.coremodule.common.Status;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

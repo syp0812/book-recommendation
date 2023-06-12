@@ -1,7 +1,7 @@
 package com.example.coremodule.book_library_info;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 

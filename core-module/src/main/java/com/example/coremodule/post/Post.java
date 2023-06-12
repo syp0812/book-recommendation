@@ -1,7 +1,7 @@
 package com.example.coremodule.post;
 
 import com.example.coremodule.common.Status;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

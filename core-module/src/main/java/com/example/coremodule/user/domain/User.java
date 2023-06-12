@@ -2,8 +2,8 @@ package com.example.coremodule.user.domain;
 
 import com.example.coremodule.common.CommonConstant;
 import com.example.coremodule.common.Status;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Pattern;
+import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
